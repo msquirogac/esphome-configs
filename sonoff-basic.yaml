@@ -2,7 +2,7 @@ substitutions:
   device_name: "esphome-switch"
   friendly_name: "ESPHome Switch"
   project_name: "esphome.switch"
-  project_version: "1.0-rc1"
+  project_version: "1.0-rc2"
   relay_restore_mode: RESTORE_DEFAULT_OFF
 
 esphome:
@@ -50,13 +50,13 @@ binary_sensor:
       - switch.toggle: relay
 
 sensor:
-  - platform: uptime
-    name: "${friendly_name} Uptime"
-    disabled_by_default: true
-
   - platform: wifi_signal
     name: "${friendly_name} RSSI"
     update_interval: 60s
+
+  - platform: uptime
+    name: "${friendly_name} Uptime"
+    disabled_by_default: true
 
 button:
   - platform: restart
@@ -64,6 +64,7 @@ button:
 
   - platform: factory_reset
     name: "${friendly_name} Factory Reset"
+    disabled_by_default: true
 
 switch:
   - platform: gpio
