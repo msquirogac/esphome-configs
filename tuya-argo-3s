@@ -2,7 +2,7 @@ substitutions:
   device_name: "esphome-switch"
   friendly_name: "ESPHome Switch"
   project_name: "esphome.switch"
-  project_version: "0.2"
+  project_version: "0.3"
   relay_restore_mode: RESTORE_DEFAULT_OFF
 
 esphome:
@@ -44,16 +44,20 @@ binary_sensor:
   - platform: gpio
     name: "${friendly_name} Button 1"
     pin:
-      number: GPIO14
+      number: GPIO12
       mode: INPUT_PULLUP
       inverted: true
+    on_press:
+      - switch.toggle: relay1
 
   - platform: gpio
     name: "${friendly_name} Button 2"
     pin:
-      number: GPIO12
+      number: GPIO14
       mode: INPUT_PULLUP
       inverted: true
+    on_press:
+      - switch.toggle: relay2
 
   - platform: gpio
     name: "${friendly_name} Button 3"
@@ -61,6 +65,8 @@ binary_sensor:
       number: GPIO5
       mode: INPUT_PULLUP
       inverted: true
+    on_press:
+      - switch.toggle: relay3
 
 sensor:
   - platform: wifi_signal
@@ -78,6 +84,25 @@ button:
   - platform: factory_reset
     name: "${friendly_name} Factory Reset"
     disabled_by_default: true
+
+switch:
+  - platform: gpio
+    name: "${friendly_name} Relay 1"
+    pin: GPIO13
+    id: relay1
+    restore_mode: ${relay_restore_mode}
+
+  - platform: gpio
+    name: "${friendly_name} Relay 2"
+    pin: GPIO4
+    id: relay2
+    restore_mode: ${relay_restore_mode}
+
+  - platform: gpio
+    name: "${friendly_name} Relay 3"
+    pin: GPIO15
+    id: relay3
+    restore_mode: ${relay_restore_mode}
 
 text_sensor:
   - platform: wifi_info
