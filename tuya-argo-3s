@@ -2,7 +2,7 @@ substitutions:
   device_name: "esphome-switch"
   friendly_name: "ESPHome Switch"
   project_name: "esphome.switch"
-  project_version: "0.1"
+  project_version: "0.2"
   relay_restore_mode: RESTORE_DEFAULT_OFF
 
 esphome:
@@ -42,37 +42,21 @@ binary_sensor:
     name: "${friendly_name} Status"
 
   - platform: gpio
-    name: "${friendly_name} GPIO14"
+    name: "${friendly_name} Button 1"
     pin:
       number: GPIO14
       mode: INPUT_PULLUP
       inverted: true
+
   - platform: gpio
-    name: "${friendly_name} GPIO12"
+    name: "${friendly_name} Button 2"
     pin:
       number: GPIO12
       mode: INPUT_PULLUP
       inverted: true
+
   - platform: gpio
-    name: "${friendly_name} GPIO13"
-    pin:
-      number: GPIO13
-      mode: INPUT_PULLUP
-      inverted: true
-  - platform: gpio
-    name: "${friendly_name} GPIO15"
-    pin:
-      number: GPIO15
-      mode: INPUT_PULLUP
-      inverted: true
-  - platform: gpio
-    name: "${friendly_name} GPIO4"
-    pin:
-      number: GPIO4
-      mode: INPUT_PULLUP
-      inverted: true
-  - platform: gpio
-    name: "${friendly_name} GPIO5"
+    name: "${friendly_name} Button 3"
     pin:
       number: GPIO5
       mode: INPUT_PULLUP
