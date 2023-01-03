@@ -27,6 +27,7 @@ mdns:
 
 web_server:
   port: 80
+  local: True
 
 wifi:
   ap: {} # This spawns an AP with the device name and mac address with no password.
