@@ -60,10 +60,10 @@ sensor:
 
 button:
   - platform: restart
-    name: "Restart"
+    name: "${friendly_name} Restart"
 
   - platform: factory_reset
-    name: Factory Reset
+    name: "${friendly_name} Factory Reset"
 
 switch:
   - platform: gpio
