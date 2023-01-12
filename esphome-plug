@@ -1,0 +1,99 @@
+substitutions:
+  device_name: "esphome-plug"
+  friendly_name: "ESPHome plug"
+  project_name: "esphome.plug"
+  project_version: "1.0-rc1"
+  relay_restore_mode: RESTORE_DEFAULT_OFF
+
+esphome:
+  name: "${device_name}"
+  name_add_mac_suffix: true
+  project:
+    name: "${project_name}"
+    version: "${project_version}"
+
+esp8266:
+  board: esp8285
+  restore_from_flash: true
+
+api:
+
+ota:
+
+logger:
+
+mdns:
+  disabled: false
+
+web_server:
+  port: 80
+  local: True
+
+wifi:
+  ap: {} # This spawns an AP with the device name and mac address with no password.
+
+captive_portal:
+
+dashboard_import:
+  package_import_url: github://msquirogac/esphome-configs/esphome-plug.yaml
+
+binary_sensor:
+  - platform: status
+    name: "${friendly_name} Status"
+
+  - platform: gpio
+    name: "${friendly_name} Button"
+    pin:
+      number: GPIO0
+      mode: INPUT_PULLUP
+      inverted: true
+    on_press:
+      - switch.toggle: relay
+
+sensor:
+  - platform: wifi_signal
+    name: "${friendly_name} RSSI"
+    update_interval: 60s
+
+  - platform: uptime
+    name: "${friendly_name} Uptime"
+    disabled_by_default: true
+
+button:
+  - platform: restart
+    name: "${friendly_name} Restart"
+
+  - platform: factory_reset
+    name: "${friendly_name} Factory Reset"
+    disabled_by_default: true
+
+switch:
+  - platform: gpio
+    name: "${friendly_name} Relay"
+    pin: GPIO12
+    id: relay
+    restore_mode: ${relay_restore_mode}
+    on_turn_on:
+      - light.turn_on: green_led
+
+    on_turn_off:
+      - light.turn_off: green_led
+
+light:
+  - platform: status_led
+    name: "${friendly_name} LED"
+    id: green_led
+    disabled_by_default: true
+    pin:
+      inverted: true
+      number: GPIO13
+
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "${friendly_name} IPAddress"
+      disabled_by_default: true
+     
+time:
+  - platform: sntp
+    id: my_time
