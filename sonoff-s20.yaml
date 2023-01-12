@@ -1,7 +1,7 @@
 substitutions:
-  device_name: "esphome-plug"
-  friendly_name: "ESPHome plug"
-  project_name: "esphome.plug"
+  device_name: "esphome-switch"
+  friendly_name: "ESPHome Switch"
+  project_name: "esphome.switch"
   project_version: "1.0-rc1"
   relay_restore_mode: RESTORE_DEFAULT_OFF
 
@@ -35,7 +35,7 @@ wifi:
 captive_portal:
 
 dashboard_import:
-  package_import_url: github://msquirogac/esphome-configs/esphome-plug.yaml
+  package_import_url: github://msquirogac/esphome-configs/sonoff-basic.yaml
 
 binary_sensor:
   - platform: status
