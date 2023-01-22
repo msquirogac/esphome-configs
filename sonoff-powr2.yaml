@@ -21,6 +21,11 @@ api:
 ota:
 
 logger:
+  baud_rate: 0
+
+uart:
+  rx_pin: RX
+  baud_rate: 4800
 
 mdns:
   disabled: false
@@ -36,10 +41,6 @@ captive_portal:
 
 dashboard_import:
   package_import_url: github://msquirogac/esphome-configs/sonoff-powr2.yaml
-
-uart:
-  rx_pin: RX
-  baud_rate: 4800
 
 binary_sensor:
   - platform: status
