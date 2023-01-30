@@ -67,13 +67,13 @@ sensor:
   - platform: cse7766
     update_interval: 1s
     current:
-      name: "Current"
+      name: "${friendly_name} Current"
     voltage:
-      name: "Voltage"
+      name: "${friendly_name} Voltage"
     power:
-      name: "Power"
+      name: "${friendly_name} Power"
     energy:
-      name: "Energy"
+      name: "${friendly_name} Energy"
 
 button:
   - platform: restart
