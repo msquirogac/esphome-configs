@@ -2,7 +2,7 @@ substitutions:
   device_name: "esphome-bluetooth-proxy"
   friendly_name: "ESPHome Bluetooth Proxy"
   project_name: "esphome.bluetooth-proxy"
-  project_version: "1.0-rc0"
+  project_version: "1.0-rc1"
   relay_restore_mode: RESTORE_DEFAULT_OFF
 
 esphome:
@@ -25,10 +25,6 @@ logger:
 
 mdns:
   disabled: false
-
-web_server:
-  port: 80
-  local: True
 
 wifi:
   ap: {} # This spawns an AP with the device name and mac address with no password.
