@@ -33,8 +33,6 @@ web_server:
 wifi:
   ap: {} # This spawns an AP with the device name and mac address with no password.
 
-captive_portal:
-
 dashboard_import:
   package_import_url: github://msquirogac/esphome-configs/bluetooth-proxy.yaml
 
