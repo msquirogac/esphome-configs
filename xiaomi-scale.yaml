@@ -61,14 +61,13 @@ sensor:
       name: "${friendly_name} Weight"
     impedance:
       name: "${friendly_name} Impedance"
-    #clear_impedance: true
 
 text_sensor:
   - platform: wifi_info
     ip_address:
       name: "${friendly_name} IPAddress"
       disabled_by_default: true
-     
+
 time:
   - platform: sntp
     id: my_time
