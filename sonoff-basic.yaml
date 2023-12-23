@@ -31,6 +31,9 @@ web_server:
 
 wifi:
   ap: {} # This spawns an AP with the device name and mac address with no password.
+  fast_connect: false
+  output_power: 10.0
+  power_save_mode: none
 
 captive_portal:
 
