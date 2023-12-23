@@ -2,7 +2,7 @@ substitutions:
   device_name: "esphome-switch"
   friendly_name: "ESPHome Switch"
   project_name: "esphome.switch"
-  project_version: "1.0-rc3"
+  project_version: "1.0-rc4"
   relay_restore_mode: RESTORE_DEFAULT_OFF
 
 esphome:
