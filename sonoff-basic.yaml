@@ -76,7 +76,6 @@ switch:
     pin: GPIO12
     id: relay
     restore_mode: ${relay_restore_mode}
-    internal: true
     on_turn_on:
       - light.turn_on: green_led
     on_turn_off:
