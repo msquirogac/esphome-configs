@@ -2,8 +2,9 @@ substitutions:
   device_name: "esphome-meter"
   friendly_name: "ESPHome Meter"
   project_name: "esphome.meter"
-  project_version: "1.0-rc2"
-
+  project_version: "1.0-rc3"
+  relay_restore_mode: RESTORE_DEFAULT_ON
+  
 esphome:
   name: "${device_name}"
   name_add_mac_suffix: true
@@ -55,6 +56,8 @@ binary_sensor:
       number: GPIO0
       mode: INPUT_PULLUP
       inverted: true
+    on_press:
+      - switch.toggle: relay
 
 sensor:
   - platform: wifi_signal
@@ -99,10 +102,10 @@ light:
   - platform: status_led
     name: "${friendly_name} LED"
     id: blue_led
+    internal: true
     pin:
       inverted: true
       number: GPIO13
-    internal: true
 
 text_sensor:
   - platform: wifi_info
