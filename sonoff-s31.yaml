@@ -104,6 +104,7 @@ light:
     pin:
       inverted: true
       number: GPIO13
+    internal: true
 
 text_sensor:
   - platform: wifi_info
