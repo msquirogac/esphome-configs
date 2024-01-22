@@ -93,10 +93,6 @@ switch:
     pin: GPIO12
     id: relay
     internal: true
-    on_turn_on:
-      - light.turn_on: blue_led
-    on_turn_off:
-      - light.turn_off: blue_led
 
 light:
   - platform: status_led
