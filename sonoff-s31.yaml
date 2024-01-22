@@ -100,7 +100,6 @@ light:
   - platform: status_led
     name: "${friendly_name} LED"
     id: blue_led
-    disabled_by_default: true
     pin:
       inverted: true
       number: GPIO13
