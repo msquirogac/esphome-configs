@@ -90,6 +90,7 @@ switch:
     name: "${friendly_name} Relay"
     pin: GPIO12
     id: relay
+    internal: true
 
 light:
   - platform: status_led
