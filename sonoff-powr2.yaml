@@ -53,8 +53,8 @@ binary_sensor:
       number: GPIO0
       mode: INPUT_PULLUP
       inverted: true
-#    on_press:
-#      - switch.toggle: relay
+    on_press:
+      - output.toggle: relay
 
 sensor:
   - platform: wifi_signal
