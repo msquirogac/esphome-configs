@@ -88,10 +88,10 @@ button:
 #switch:
 output:
   - platform: gpio
-    name: "${friendly_name} Relay"
+#    name: "${friendly_name} Relay"
     pin: GPIO12
     id: relay
-    restore_mode: ${relay_restore_mode}
+#    restore_mode: ${relay_restore_mode}
 #    internal: ${relay_unmanaged_mode}
 
 light:
