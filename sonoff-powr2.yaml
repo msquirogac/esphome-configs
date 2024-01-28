@@ -54,7 +54,7 @@ binary_sensor:
       mode: INPUT_PULLUP
       inverted: true
     on_press:
-      - output.toggle: relay
+      - switch.toggle: relay
 
 sensor:
   - platform: wifi_signal
@@ -85,14 +85,13 @@ button:
     name: "${friendly_name} Factory Reset"
     disabled_by_default: true
 
-#switch:
-output:
+switch:
   - platform: gpio
-#    name: "${friendly_name} Relay"
+    name: "${friendly_name} Relay"
     pin: GPIO12
     id: relay
-#    restore_mode: ${relay_restore_mode}
-#    internal: ${relay_unmanaged_mode}
+    restore_mode: ${relay_restore_mode}
+    internal: ${relay_unmanaged_mode}
 
 light:
   - platform: status_led
