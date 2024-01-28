@@ -85,13 +85,14 @@ button:
     name: "${friendly_name} Factory Reset"
     disabled_by_default: true
 
-switch:
+#switch:
+output:
   - platform: gpio
     name: "${friendly_name} Relay"
     pin: GPIO12
     id: relay
     restore_mode: ${relay_restore_mode}
-    internal: ${relay_unmanaged_mode}
+#    internal: ${relay_unmanaged_mode}
 
 light:
   - platform: status_led
