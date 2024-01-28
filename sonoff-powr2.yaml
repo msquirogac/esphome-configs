@@ -2,7 +2,7 @@ substitutions:
   device_name: "esphome-meter"
   friendly_name: "ESPHome Meter"
   project_name: "esphome.meter"
-  project_version: "1.0-rc4"
+  project_version: "1.0-rc5"
   relay_restore_mode: RESTORE_DEFAULT_ON
   relay_unmanaged_mode: "true"
 
