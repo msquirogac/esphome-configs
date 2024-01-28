@@ -2,8 +2,9 @@ substitutions:
   device_name: "esphome-meter"
   friendly_name: "ESPHome Meter"
   project_name: "esphome.meter"
-  project_version: "1.0-rc3"
-  relay_restore_mode: RESTORE_DEFAULT_OFF
+  project_version: "1.0-rc4"
+  relay_restore_mode: RESTORE_DEFAULT_ON
+  manage_relay: true
 
 esphome:
   name: "${device_name}"
@@ -89,12 +90,13 @@ switch:
     pin: GPIO12
     id: relay
     restore_mode: ${relay_restore_mode}
+    internal: ${manage_relay}
 
 light:
   - platform: status_led
     name: "${friendly_name} LED"
-    id: green_led
-    disabled_by_default: true
+    id: blue_led
+    internal: true
     pin:
       inverted: true
       number: GPIO13
