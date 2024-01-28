@@ -4,7 +4,7 @@ substitutions:
   project_name: "esphome.meter"
   project_version: "1.0-rc4"
   relay_restore_mode: RESTORE_DEFAULT_ON
-  manage_relay: "true"
+  relay_unmanaged_mode: "true"
 
 esphome:
   name: "${device_name}"
@@ -90,7 +90,7 @@ switch:
     pin: GPIO12
     id: relay
     restore_mode: ${relay_restore_mode}
-    internal: ${manage_relay}
+    internal: ${relay_unmanaged_mode}
 
 light:
   - platform: status_led
