@@ -98,7 +98,7 @@ light:
     id: blue_led
     internal: true
     pin:
-      inverted: true
+      inverted: false
       number: GPIO13
 
 text_sensor:
