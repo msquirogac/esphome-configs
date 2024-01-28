@@ -79,6 +79,7 @@ sensor:
 button:
   - platform: restart
     name: "${friendly_name} Restart"
+    disabled_by_default: true
 
   - platform: factory_reset
     name: "${friendly_name} Factory Reset"
@@ -106,7 +107,7 @@ text_sensor:
     ip_address:
       name: "${friendly_name} IPAddress"
       disabled_by_default: true
-     
+
 time:
   - platform: sntp
     id: my_time
