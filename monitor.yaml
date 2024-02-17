@@ -43,15 +43,6 @@ binary_sensor:
   - platform: status
     name: "${friendly_name} Status"
 
-  - platform: gpio
-    name: "${friendly_name} Button"
-    pin:
-      number: GPIO0
-      mode: INPUT_PULLUP
-      inverted: true
-    on_press:
-      - switch.toggle: relay
-
 sensor:
   - platform: wifi_signal
     name: "${friendly_name} RSSI"
