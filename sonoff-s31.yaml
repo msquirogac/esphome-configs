@@ -69,7 +69,7 @@ sensor:
     disabled_by_default: true
 
   - platform: cse7766
-    update_interval: 5s
+    update_interval: 1s
     current:
       name: "${friendly_name} Current"
     voltage:
