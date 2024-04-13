@@ -2,9 +2,10 @@ substitutions:
   device_name: "esphome-meter"
   friendly_name: "ESPHome Meter"
   project_name: "esphome.meter"
-  project_version: "1.0-rc5"
+  project_version: "1.0-rc6"
   relay_restore_mode: RESTORE_DEFAULT_ON
   relay_internal: "true"
+  update_interval: 30s
 
 esphome:
   name: "${device_name}"
@@ -71,15 +72,22 @@ sensor:
     disabled_by_default: true
 
   - platform: cse7766
-    update_interval: 1s
     current:
       name: "${friendly_name} Current"
+      filters:
+        - throttle_average: ${update_interval}
     voltage:
       name: "${friendly_name} Voltage"
+      filters:
+        - throttle_average: ${update_interval}
     power:
       name: "${friendly_name} Power"
+      filters:
+        - throttle_average: ${update_interval}
     energy:
       name: "${friendly_name} Energy"
+      filters:
+        - throttle: ${update_interval}
 
 button:
   - platform: restart
