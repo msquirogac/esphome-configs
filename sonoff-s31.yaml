@@ -124,7 +124,7 @@ text_sensor:
     ip_address:
       name: "${friendly_name} IPAddress"
       disabled_by_default: true
-     
+
 time:
   - platform: sntp
     id: my_time
