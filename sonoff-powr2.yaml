@@ -122,5 +122,5 @@ text_sensor:
       disabled_by_default: true
 
 time:
-  - platform: sntp
-    id: my_time
+  - platform: homeassistant
+    id: homeassistant_time
