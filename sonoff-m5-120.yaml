@@ -79,10 +79,17 @@ switch:
     restore_mode: ${relay_restore_mode}
     internal: true
     on_turn_on:
-      - light.turn_on: red_led
+      - output.turn_on: red_led
 
     on_turn_off:
-      - light.turn_off: red_led
+      - output.turn_off: red_led
+
+output:
+  - platform: gpio
+    id: red_led
+    pin:
+      number: GPIO19
+      inverted: False
 
 light:
   - platform: status_led
@@ -92,14 +99,6 @@ light:
     pin:
       inverted: false
       number: GPIO05
-
-  - platform: binary
-    name: "${friendly_name} LED2"
-    id: red_led
-    internal: true
-    pin:
-      inverted: false
-      number: GPIO19
 
 text_sensor:
   - platform: wifi_info
