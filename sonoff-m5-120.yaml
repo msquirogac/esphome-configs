@@ -93,7 +93,7 @@ light:
       inverted: false
       number: GPIO05
 
-  - platform: status_led
+  - platform: binary
     name: "${friendly_name} LED2"
     id: red_led
     internal: true
