@@ -49,11 +49,6 @@ binary_sensor:
     on_press:
       - switch.toggle: relay
 
-  - platform: template
-    name: "${friendly_name} Relay State"
-    lambda: |-
-        return id(relay).state;
-
 sensor:
   - platform: wifi_signal
     name: "${friendly_name} RSSI"
