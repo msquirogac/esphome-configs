@@ -86,7 +86,7 @@ light:
     internal: true
     pin:
       inverted: false
-      number: GPIO13
+      number: GPIO05
 
 text_sensor:
   - platform: wifi_info
