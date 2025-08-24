@@ -14,7 +14,6 @@ esphome:
 
 esp32:
   board: esp32dev
-  restore_from_flash: true
 
 api:
 
