@@ -41,13 +41,18 @@ binary_sensor:
     name: "${friendly_name} Status"
 
   - platform: gpio
-    name: "${friendly_name} Button 1"
+    name: "${friendly_name} Button"
     pin:
-      number: GPIO00
+      number: GPIO0
       mode: INPUT_PULLUP
       inverted: true
     on_press:
-      - switch.toggle: relay1
+      - switch.toggle: relay
+
+  - platform: template
+    name: "${friendly_name} Relay State"
+    lambda: |-
+        return id(relay).state;
 
 sensor:
   - platform: wifi_signal
@@ -68,9 +73,10 @@ button:
 
 switch:
   - platform: gpio
-    name: "${friendly_name} Relay 1"
+    name: "${friendly_name} Relay"
     pin: GPIO23
-    id: relay1
+    id: relay
+    internal: true
     restore_mode: ${relay_restore_mode}
 
 light:
@@ -80,7 +86,7 @@ light:
     internal: true
     pin:
       inverted: false
-      number: GPIO5
+      number: GPIO13
 
 text_sensor:
   - platform: wifi_info
